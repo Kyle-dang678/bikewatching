@@ -14,13 +14,12 @@ const map = new mapboxgl.Map({
 });
 
 function getCoords(station) {
-  const point = new mapboxgl.LngLat(+station.Long, +station.Lat);
+  const point = new mapboxgl.LngLat(+station.lon, +station.lat);
   const { x, y } = map.project(point);
   return { cx: x, cy: y };
 }
 
 map.on("load", async () => {
-  // Boston bike lanes
   map.addSource("boston_route", {
     type: "geojson",
     data: "https://bostonopendata-boston.opendata.arcgis.com/datasets/boston::existing-bike-network-2022.geojson",
@@ -37,7 +36,6 @@ map.on("load", async () => {
     },
   });
 
-  // Cambridge bike lanes
   map.addSource("cambridge_route", {
     type: "geojson",
     data: "https://raw.githubusercontent.com/cambridgegis/cambridgegis_data/main/Recreation/Bike_Facilities/RECREATION_BikeFacilities.geojson",
