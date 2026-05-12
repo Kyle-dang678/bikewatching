@@ -22,7 +22,8 @@ body {
     z-index: 1;
     pointer-events: none;
 }
-circle {
+circle, 
+.legend > div {
     --color-departures: steelblue;
     --color-arrivals: darkorange;
     --color: color-mix(
@@ -30,11 +31,26 @@ circle {
         var(--color-departures) calc(100% * var(--departure-ratio)),
         var(--color-arrivals)
     );
+}
+circle {
     fill: var(--color);
     fill-opacity: 0.6;
     stroke: white;
     stroke-width: 1;
     pointer-events: auto;
+}
+.legend {
+    display: flex;
+    gap: 1px;
+    margin-block: 1em;
+}
+.legend > div{
+    flex: 1;
+    background: var(--color);
+    padding: 0.5em 1em;
+    text-align: center;
+    font-size: 0.85em;
+    color: white;
 }
 header {
     display: flex;
