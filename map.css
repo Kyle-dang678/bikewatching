@@ -30,7 +30,7 @@ circle {
         var(--color-departures) calc(100% * var(--departure-ratio)),
         var(--color-arrivals)
     );
-    fill: steelblue;
+    fill: var(--color);
     fill-opacity: 0.6;
     stroke: white;
     stroke-width: 1;
