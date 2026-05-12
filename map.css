@@ -23,5 +23,9 @@ body {
     pointer-events: none;
 }
 circle {
+    fill-opacity: 0.6;
+    fill: 'steelblue';
+    stroke: white;
+    stroke-width: 1;
     pointer-events: auto;
 }
