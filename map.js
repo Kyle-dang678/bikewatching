@@ -192,8 +192,8 @@ map.on("load", async () => {
       selectedTime.textContent = formatTime(timeFilter);
       anyTimeLabel.style.display = "none";
     }
+    updateScatterPlot(timeFilter);
   }
-  updateScatterPlot(timeFilter);
   timeSlider.addEventListener("input", updateTimeDisplay);
   updateTimeDisplay();
 });
